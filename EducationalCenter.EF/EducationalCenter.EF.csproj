@@ -24,4 +24,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EducationalCenter.Core\EducationalCenter.Core.csproj" />
+  </ItemGroup>
+
 </Project>
