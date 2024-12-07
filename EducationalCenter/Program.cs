@@ -1,5 +1,7 @@
+using EducationalCenter.Core.Interfaces.RepositoryInterfaces;
 using EducationalCenter.Core.Models.BaseModels;
 using EducationalCenter.EF.Data;
+using EducationalCenter.EF.UnitsOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +26,11 @@ namespace EducationalCenter
 
 
 			builder.Services.AddControllersWithViews();
+
+			// Repository Pattern
+			// ---->
+			builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
 
 			var app = builder.Build();
 
