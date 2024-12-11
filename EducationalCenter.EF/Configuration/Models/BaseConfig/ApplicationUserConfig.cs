@@ -9,8 +9,8 @@ namespace EducationalCenter.EF.Configuration.Models.BaseConfig
 	{
 		public virtual void Configure(EntityTypeBuilder<ApplicationUser> builder)
 		{
-			builder.Property(x => x.UserName).HasMaxLength(AppUserSettings.MaxNameLength);
-			builder.Property(x => x.About).HasMaxLength(AppUserSettings.MaxAboutLength);
+			builder.Property(x => x.UserName).HasMaxLength(ModelsSettings.MaxUserNameLength);
+			builder.Property(x => x.About).HasMaxLength(ModelsSettings.MaxUserAboutLength);
 			builder.Property(x => x.Age).IsRequired(false);
 			builder.Property(x => x.OnCreate).HasDefaultValueSql("GETDATE()").IsRequired();
 			builder.Property(x => x.OnUpdate).HasDefaultValueSql("GETDATE()").IsRequired();

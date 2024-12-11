@@ -163,6 +163,11 @@ namespace EducationalCenter.EF.Data.Migration
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2048)
+                        .HasColumnType("nvarchar(2048)");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -178,6 +183,11 @@ namespace EducationalCenter.EF.Data.Migration
 
                     b.Property<float>("Price")
                         .HasColumnType("real");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(48)
+                        .HasColumnType("nvarchar(48)");
 
                     b.HasKey("Id");
 

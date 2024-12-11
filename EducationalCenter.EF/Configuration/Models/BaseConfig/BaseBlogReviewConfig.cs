@@ -14,7 +14,7 @@ namespace EducationalCenter.EF.Configuration.Models.BaseConfig
 		public override void Configure(EntityTypeBuilder<T> builder)
 		{
 			base.Configure(builder);
-			builder.Property(x => x.Text).HasMaxLength(BlogReviewsSettings.MaxTextLength);
+			builder.Property(x => x.Text).HasMaxLength(ModelsSettings.MaxBlogReviewsTextLength);
 		}
 	}
 }

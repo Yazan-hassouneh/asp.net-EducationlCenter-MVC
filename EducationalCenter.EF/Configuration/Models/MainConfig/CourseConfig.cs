@@ -1,11 +1,7 @@
-﻿using EducationalCenter.Core.Models.DomainModels;
+﻿using EducationalCenter.Core.Const;
+using EducationalCenter.Core.Models.DomainModels;
 using EducationalCenter.EF.Configuration.Models.BaseConfig;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EducationalCenter.EF.Configuration.Models.MainConfig
 {
@@ -15,6 +11,8 @@ namespace EducationalCenter.EF.Configuration.Models.MainConfig
 		{
 			base.Configure(builder);
 			builder.Property(x => x.Price).IsRequired();
+			builder.Property(x => x.Title).IsRequired().HasMaxLength(ModelsSettings.MaxCourseTitleLength);
+			builder.Property(x => x.Description).IsRequired().HasMaxLength(ModelsSettings.MaxCourseDescriptionLength);
 		}
 	}
 }

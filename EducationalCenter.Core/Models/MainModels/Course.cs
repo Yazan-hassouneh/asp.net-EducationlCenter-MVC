@@ -6,7 +6,9 @@ namespace EducationalCenter.Core.Models.DomainModels
 {
 	public class Course : MainBase
 	{
+		public string Title { get; set; } = null!;
 		public float Price { get; set; }
+		public string Description { get; set; } = null!;
 		public string? Image { get; set; }
 		public virtual ICollection<CourseReview> Reviews { get; set; } = [];
 		public virtual ICollection<StudentsCourses> AllStudents { get; set; } = [];

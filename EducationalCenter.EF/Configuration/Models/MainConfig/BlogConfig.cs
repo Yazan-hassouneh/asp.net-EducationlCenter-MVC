@@ -12,7 +12,7 @@ namespace EducationalCenter.EF.Configuration.Models.MainConfig
 		public override void Configure(EntityTypeBuilder<Blog> builder)
 		{
 			base.Configure(builder);
-			builder.Property(x => x.Title).HasMaxLength(BlogReviewsSettings.MaxBlogTitleLength);
+			builder.Property(x => x.Title).HasMaxLength(ModelsSettings.MaxBlogTitleLength);
 
 			builder.HasOne(mc => mc.User)
 					.WithMany(m => m.Blogs)
